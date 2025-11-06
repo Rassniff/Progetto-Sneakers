@@ -4,14 +4,6 @@ Uno script Python per il monitoraggio dei prezzi di sneaker, sviluppato come pro
 
 Questo script analizza (fa *scraping*) un elenco di siti di e-commerce per un articolo specifico, estrae i prezzi e invia un report riepilogativo in formato HTML via email.
 
-## Panoramica
-
-| Esecuzione da Terminale | Report via Email (HTML) | Analisi del DOM |
-| :---: | :---: | :---: |
-|  |  |  |
-
-*(Nota: devi sostituire `path/to/screenshot...` con il percorso o il link alle immagini che hai caricato su GitHub)*
-
 -----
 
 ## Obiettivi del Progetto
@@ -34,7 +26,7 @@ L'obiettivo era quello di implementare un client di rete in grado di:
 
 -----
 
-## Come Eseguirlo (Getting Started)
+## Come Eseguirlo
 
 ### 1\. Prerequisiti
 
@@ -105,27 +97,3 @@ python main.py
 Lo script stamperà i progressi sul terminale e invierà l'email al termine.
 
 -----
-
-## Funzionalità e Sfide
-
-Questo script non è un semplice scraper, ma include logiche per gestire le complessità del web moderno:
-
-  * **Report HTML:** L'email inviata non è testo semplice, ma un report HTML formattato con link cliccabili ai siti analizzati, sfruttando i MIME types.
-  * **Gestione Testo "Sporco":** Include una funzione (`pulisci_prezzo`) per normalizzare l'output, gestendo:
-      * Testo aggiuntivo (es. `"Prezzo scontato€184,95"`).
-      * Simboli di valuta multipli (`€`, `$`).
-      * Formati di localizzazione (es. `184,95` vs `184.95`).
-  * **Parsing di Testo "Nudo":** È in grado di estrarre prezzi che non sono avvolti in un tag, ma sono "nodi di testo" diretti di un contenitore (`find(string=True, recursive=False)`).
-
-### Sfide Principali
-
-La difficoltà maggiore è stata aggirare le contromisure dei siti:
-
-1.  **Rendering JavaScript:** Molti siti non inviano il prezzo nell'HTML statico, ma lo caricano dinamicamente con JavaScript. Questi siti non possono essere analizzati con `requests` e sono stati esclusi.
-2.  **HTML Non-Standard:** Ogni sito usa una struttura diversa, richiedendo un selettore ad-hoc per ognuno.
-
-## Disclaimer
-
-Questo script è stato creato a **scopo puramente didattico** per un progetto universitario.
-
-I selettori HTML (`SITI_DA_CONTROLLARE`) sono instabili e **smetteranno di funzionare** non appena i siti aggiorneranno il loro layout. Questo script non è inteso per un uso in produzione.
