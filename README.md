@@ -69,21 +69,6 @@ Apri il file `main.py` e modifica le seguenti costanti nella parte superiore del
 EMAIL_SENDER = "latuaemail@gmail.com"
 EMAIL_PASSWORD = "la_tua_password_app_di_16_lettere" # <-- INSERISCI QUI LA PASSWORD PER LE APP
 EMAIL_RECEIVER = "email.destinatario@esempio.com"
-
-# Finge di essere un browser
-HEADERS = {
-    'User-Agent': 'Mozilla/5.0 ...'
-}
-
-# Modifica questa lista con i siti da analizzare
-SITI_DA_CONTROLLARE = [
-    {
-        'nome': 'Nome Sito 1',
-        'url': '...',
-        'selettore_prezzo': ('span', {'class_': 'prezzo'})
-    },
-    # ...
-]
 ```
 
 ### 4\. Esecuzione
