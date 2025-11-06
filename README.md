@@ -31,7 +31,7 @@ L'obiettivo era quello di implementare un client di rete in grado di:
 ### 1\. Prerequisiti
 
   * Python 3.10 o superiore.
-  * Un account email (es. Gmail) con una **"Password per le app"** generata. (Non la tua password normale\!)
+  * Un account email (es. Gmail) con una **"Password per le app"** generata.
 
 ### 2\. Installazione
 
